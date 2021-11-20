@@ -1,7 +1,7 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,13 +21,14 @@ import { ItemsListComponent } from './components/item/items-list/items-list.comp
     AddItemComponent,
     ItemDetailsComponent,
     ItemsListComponent,
-    HttpClientModule
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
