@@ -1,1 +1,44 @@
-<p>events-list works!</p>
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recherche par titre"
+          [(ngModel)]="title"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchTitle()"
+          >
+            Rechercher
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>Liste d'évènements</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let event of events; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveEvent(event, i)"
+        >
+          {{ event.title }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllEvents()">
+        Tout supprimer
+      </button>
+    </div>
+    <div class="col-md-6">
+      <app-event-details
+        [viewMode]="true"
+        [currentEvent]="currentEvent"
+      ></app-event-details>
+    </div>
+  </div>
