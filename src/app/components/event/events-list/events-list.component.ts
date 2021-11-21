@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/models/event.model';
 import { EventService } from 'src/app/services/event.service';
 
+import { mockEvents } from 'src/data/mock-events';
+
 @Component({
   selector: 'app-events-list',
   templateUrl: './events-list.component.html',
@@ -21,14 +23,15 @@ export class EventsListComponent implements OnInit {
   }
 
   retrieveEvents(): void {
-    this.eventService.getAll()
-      .subscribe({
-        next: (data) => {
-          this.events = data;
-          console.log(data);
-        },
-        error: (e) => console.error(e)
-      });
+    this.events = mockEvents;
+    // this.eventService.getAll()
+    //   .subscribe({
+    //     next: (data) => {
+    //       this.events = data;
+    //       console.log('data retrieveEvents : ', data);
+    //     },
+    //     error: (e) => console.error(e)
+    //   });
   }
 
   refreshList(): void {

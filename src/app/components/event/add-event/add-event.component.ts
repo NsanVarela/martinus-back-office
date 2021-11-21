@@ -12,7 +12,7 @@ export class AddEventComponent implements OnInit {
   event: Event = {
     title: '',
     description: '',
-    date: new Date,
+    date: '',
     published: false
   };
   submitted = false;
@@ -44,7 +44,7 @@ export class AddEventComponent implements OnInit {
     this.event = {
       title: '',
       description: '',
-      date: new Date,
+      date: '',
       published: false
     };
   }

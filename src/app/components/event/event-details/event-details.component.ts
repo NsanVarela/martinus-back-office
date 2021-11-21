@@ -15,7 +15,7 @@ export class EventDetailsComponent implements OnInit {
   @Input() currentEvent: Event = {
     title: '',
     description: '',
-    date: new Date,
+    date: '',
     published: false
   };
 

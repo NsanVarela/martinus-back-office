@@ -2,7 +2,7 @@ export class Event {
     id?: any;
     title?: string;
     description?: string;
-    date?: Date;
+    date?: string;
     picture?: File;
     published?: boolean;
 }
